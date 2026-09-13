@@ -17,8 +17,9 @@ from logsentinel.models import SEVERITY_ORDER
 from logsentinel.store import AnalysisStore
 
 MAX_UPLOAD_BYTES = 50 * 1024 * 1024
-ALLOWED_EXTENSIONS = {".csv", ".json", ".jsonl", ".ndjson",
-                      ".log", ".txt", ".text", ".out"}
+with open(os.path.join(os.path.dirname(__file__), "logsentinel", "upload_policy.json"),
+          encoding="utf-8") as _policy_file:
+    ALLOWED_EXTENSIONS = set(json.load(_policy_file)["extensions"])
 
 SEVERITIES = ("critical", "high", "medium", "low")
 RISK_BAND_RANK = {"low": 0, "moderate": 1, "elevated": 2, "high": 3, "critical": 4}

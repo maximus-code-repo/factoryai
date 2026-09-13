@@ -1,0 +1,12 @@
+{
+  "extensions": [
+    ".csv",
+    ".json",
+    ".jsonl",
+    ".ndjson",
+    ".log",
+    ".txt",
+    ".text",
+    ".out"
+  ]
+}

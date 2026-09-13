@@ -3,3 +3,11 @@ __pycache__/
 .venv/
 .pytest_cache/
 data/
+node_modules/
+dist/
+.amplify/
+amplify_outputs.json
+*.tsbuildinfo
+.env
+.env.*
+!.env.example

@@ -1,0 +1,32 @@
+{
+  "name": "logsentinel-amplify",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/ensure-amplify-outputs.mjs",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "sandbox": "ampx sandbox"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.15.6",
+    "aws-amplify": "^6.20.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.25.0",
+    "@aws-amplify/backend-cli": "^1.10.0",
+    "@types/aws-lambda": "^8.10.152",
+    "@types/node": "^26.5.1",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^5.1.1",
+    "aws-cdk-lib": "^2.269.0",
+    "constructs": "^10.4.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0"
+  }
+}
