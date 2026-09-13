@@ -1,0 +1,124 @@
+Sep 12 00:00:00 app01 CROND[8100]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 00:00:00 app01 sshd[3200]: Accepted password for deploy from 10.0.0.15 port 49000 ssh2
+Sep 12 00:01:00 app01 systemd-logind[911]: New session 400 of user deploy.
+Sep 12 00:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 00:30:00 app01 CROND[8101]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 00:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 01:00:00 app01 CROND[8102]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 01:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 01:30:00 app01 CROND[8103]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 01:31:00 app01 sshd[3207]: Accepted password for pkim from 10.0.0.18 port 49007 ssh2
+Sep 12 01:32:00 app01 systemd-logind[911]: New session 407 of user pkim.
+Sep 12 02:00:00 app01 CROND[8104]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 02:02:00 app01 sshd[3214]: Accepted password for amara from 10.0.0.17 port 49014 ssh2
+Sep 12 02:03:00 app01 systemd-logind[911]: New session 414 of user amara.
+Sep 12 02:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 02:30:00 app01 CROND[8105]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 02:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 03:00:00 app01 CROND[8106]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 03:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 03:30:00 app01 CROND[8107]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 04:00:00 app01 CROND[8108]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 04:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 04:30:00 app01 CROND[8109]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 04:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 04:52:00 app01 sshd[3204]: Accepted password for deploy from 10.0.0.15 port 49004 ssh2
+Sep 12 04:53:00 app01 systemd-logind[911]: New session 404 of user deploy.
+Sep 12 05:00:00 app01 CROND[8110]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 05:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 05:23:00 app01 sshd[3211]: Accepted password for pkim from 10.0.0.18 port 49011 ssh2
+Sep 12 05:24:00 app01 systemd-logind[911]: New session 411 of user pkim.
+Sep 12 05:30:00 app01 CROND[8111]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 06:00:00 app01 CROND[8112]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 06:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 06:30:00 app01 CROND[8113]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 06:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 06:54:00 app01 sshd[3218]: Accepted password for amara from 10.0.0.17 port 49018 ssh2
+Sep 12 06:55:00 app01 systemd-logind[911]: New session 418 of user amara.
+Sep 12 07:00:00 app01 CROND[8114]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 07:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 07:13:00 app01 sshd[3201]: Accepted password for jchen from 10.0.0.16 port 49001 ssh2
+Sep 12 07:14:00 app01 systemd-logind[911]: New session 401 of user jchen.
+Sep 12 07:30:00 app01 CROND[8115]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 08:00:00 app01 CROND[8116]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 08:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 08:30:00 app01 CROND[8117]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 08:44:00 app01 sshd[3208]: Accepted password for deploy from 10.0.0.15 port 49008 ssh2
+Sep 12 08:45:00 app01 systemd-logind[911]: New session 408 of user deploy.
+Sep 12 08:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 09:00:00 app01 CROND[8118]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 09:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 09:15:00 app01 sshd[3215]: Accepted password for pkim from 10.0.0.18 port 49015 ssh2
+Sep 12 09:16:00 app01 systemd-logind[911]: New session 415 of user pkim.
+Sep 12 09:30:00 app01 CROND[8119]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 10:00:00 app01 CROND[8120]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 10:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 10:30:00 app01 CROND[8121]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 10:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 11:00:00 app01 CROND[8122]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 11:05:00 app01 sshd[3205]: Accepted password for jchen from 10.0.0.16 port 49005 ssh2
+Sep 12 11:06:00 app01 systemd-logind[911]: New session 405 of user jchen.
+Sep 12 11:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 11:30:00 app01 CROND[8123]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 12:00:00 app01 CROND[8124]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 12:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 12:30:00 app01 CROND[8125]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 12:36:00 app01 sshd[3212]: Accepted password for deploy from 10.0.0.15 port 49012 ssh2
+Sep 12 12:37:00 app01 systemd-logind[911]: New session 412 of user deploy.
+Sep 12 12:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 13:00:00 app01 CROND[8126]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 13:07:00 app01 sshd[3219]: Accepted password for pkim from 10.0.0.18 port 49019 ssh2
+Sep 12 13:08:00 app01 systemd-logind[911]: New session 419 of user pkim.
+Sep 12 13:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 13:30:00 app01 CROND[8127]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 14:00:00 app01 CROND[8128]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 14:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 14:26:00 app01 sshd[3202]: Accepted password for amara from 10.0.0.17 port 49002 ssh2
+Sep 12 14:27:00 app01 systemd-logind[911]: New session 402 of user amara.
+Sep 12 14:30:00 app01 CROND[8129]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 14:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 15:00:00 app01 CROND[8130]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 15:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 15:30:00 app01 CROND[8131]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 15:57:00 app01 sshd[3209]: Accepted password for jchen from 10.0.0.16 port 49009 ssh2
+Sep 12 15:58:00 app01 systemd-logind[911]: New session 409 of user jchen.
+Sep 12 16:00:00 app01 CROND[8132]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 16:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 16:28:00 app01 sshd[3216]: Accepted password for deploy from 10.0.0.15 port 49016 ssh2
+Sep 12 16:29:00 app01 systemd-logind[911]: New session 416 of user deploy.
+Sep 12 16:30:00 app01 CROND[8133]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 16:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 17:00:00 app01 CROND[8134]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 17:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 17:30:00 app01 CROND[8135]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 18:00:00 app01 CROND[8136]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 18:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 18:18:00 app01 sshd[3206]: Accepted password for amara from 10.0.0.17 port 49006 ssh2
+Sep 12 18:19:00 app01 systemd-logind[911]: New session 406 of user amara.
+Sep 12 18:30:00 app01 CROND[8137]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 18:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 19:00:00 app01 CROND[8138]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 19:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 19:30:00 app01 CROND[8139]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 19:49:00 app01 sshd[3213]: Accepted password for jchen from 10.0.0.16 port 49013 ssh2
+Sep 12 19:50:00 app01 systemd-logind[911]: New session 413 of user jchen.
+Sep 12 20:00:00 app01 CROND[8140]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 20:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 20:30:00 app01 CROND[8141]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 20:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 21:00:00 app01 CROND[8142]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 21:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 21:30:00 app01 CROND[8143]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 21:39:00 app01 sshd[3203]: Accepted password for pkim from 10.0.0.18 port 49003 ssh2
+Sep 12 21:40:00 app01 systemd-logind[911]: New session 403 of user pkim.
+Sep 12 22:00:00 app01 CROND[8144]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 22:10:00 app01 sshd[3210]: Accepted password for amara from 10.0.0.17 port 49010 ssh2
+Sep 12 22:11:00 app01 systemd-logind[911]: New session 410 of user amara.
+Sep 12 22:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 22:30:00 app01 CROND[8145]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 22:45:00 app01 systemd[1]: Starting Daily apt download activities...
+Sep 12 23:00:00 app01 CROND[8146]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 23:12:00 app01 ntpd[921]: time sync ok, offset +0.004s
+Sep 12 23:30:00 app01 CROND[8147]: (root) CMD (/usr/local/bin/backup-check.sh)
+Sep 12 23:41:00 app01 sshd[3217]: Accepted password for jchen from 10.0.0.16 port 49017 ssh2
+Sep 12 23:42:00 app01 systemd-logind[911]: New session 417 of user jchen.

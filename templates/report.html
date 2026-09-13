@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}{{ a.meta.original_name }} — LogSentinel{% endblock %}
+
+{% block content %}
+<div class="report-header">
+  <div>
+    <h2>{{ a.meta.original_name }}</h2>
+    <p class="muted">
+      <span class="chip">{{ a.meta.format }}</span>
+      {{ '{:,}'.format(a.summary.total_records) }} records
+      {% if a.summary.time_range %}
+        · {{ a.summary.time_range.start[:19].replace('T', ' ') }}
+        → {{ a.summary.time_range.end[:19].replace('T', ' ') }} UTC
+      {% endif %}
+      · {{ a.summary.unique_ips }} source IPs
+      · analyzed {{ a.uploaded_at[:19].replace('T', ' ') }} UTC
+    </p>
+  </div>
+  <div class="risk-box band-{{ a.summary.risk_band }}">
+    <div class="risk-score">{{ a.summary.risk_score }}</div>
+    <div class="risk-band">{{ a.summary.risk_band }} risk</div>
+  </div>
+</div>
+
+{% if a.warnings %}
+  {% for w in a.warnings %}
+    <div class="flash warn">{{ w }}</div>
+  {% endfor %}
+{% endif %}
+
+<div class="chips-row">
+  <a class="chip {{ 'active' if severity == 'all' }}"
+     href="{{ url_for('report', analysis_id=a.id) }}">All {{ a.summary.findings_total }}</a>
+  {% for s in ['critical', 'high', 'medium', 'low'] %}
+    <a class="chip sev-bg-{{ s }} {{ 'active' if severity == s }}"
+       href="{{ url_for('report', analysis_id=a.id, severity=s) }}">
+      {{ s }} {{ a.summary.severity_counts[s] or 0 }}
+    </a>
+  {% endfor %}
+</div>
+
+{% set counts = a.summary.severity_counts %}
+{% set max_count = [counts.critical, counts.high, counts.medium, counts.low] | max %}
+{% if max_count %}
+<div class="card">
+  <h3>Findings by severity</h3>
+  <div class="sev-bars">
+    {% for s in ['critical', 'high', 'medium', 'low'] %}
+    <div class="sev-bar-row">
+      <span class="sev-label">{{ s }}</span>
+      <div class="sev-bar"><div class="sev-fill sev-{{ s }}"
+           style="width: {{ (100 * (counts[s] or 0) / max_count) | round(1) }}%"></div></div>
+      <span class="sev-count">{{ counts[s] or 0 }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if a.summary.flagged_ips %}
+<div class="card">
+  <h3>Most flagged source IPs</h3>
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Source IP</th><th>Findings</th><th>Max severity</th></tr></thead>
+      <tbody>
+        {% for f in a.summary.flagged_ips %}
+        <tr>
+          <td class="mono">{{ f.ip }}</td>
+          <td>{{ f.findings }}</td>
+          <td><span class="badge sev-{{ f.max_severity }}">{{ f.max_severity }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+<section class="findings">
+  {% for f in findings %}
+  <article class="finding card border-{{ f.severity }}">
+    <header class="finding-head">
+      <span class="badge sev-{{ f.severity }}">{{ f.severity }}</span>
+      <h3>{{ f.title }}</h3>
+      <span class="chip">{{ f.rule_id }}</span>
+      <span class="chip">{{ 'statistical' if f.category == 'anomaly' else 'signature' }}</span>
+    </header>
+    <p class="finding-desc">{{ f.description }}</p>
+    {% if f.metrics %}
+    <div class="metrics">
+      {% for k, v in f.metrics.items() %}
+        <span class="metric"><b>{{ k }}</b> {{ v }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="callout"><b>Recommendation:</b> {{ f.recommendation }}</div>
+    {% if f.remediation_steps %}
+    <div class="remediation">
+      <h4>Remediation steps</h4>
+      <ol class="step-list">
+        {% for step in f.remediation_steps %}<li>{{ step }}</li>{% endfor %}
+      </ol>
+    </div>
+    {% endif %}
+    {% if f.references %}
+    <div class="remediation">
+      <h4>Learn more</h4>
+      <ul class="ref-list">
+        {% for ref in f.references %}
+          <li><a href="{{ ref.url }}" target="_blank" rel="noopener noreferrer">{{ ref.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if f.evidence %}
+    <details class="evidence">
+      <summary>
+        Show {{ f.evidence | length }} sample line{{ 's' if f.evidence | length != 1 }}
+        {% if f.count > f.evidence | length %} (of {{ f.count }}){% endif %}
+      </summary>
+      <pre class="evidence-pre">{% for e in f.evidence %}{% if e.timestamp %}[{{ e.timestamp }}] {% endif %}{{ e.raw }}
+{% endfor %}</pre>
+    </details>
+    {% endif %}
+  </article>
+  {% else %}
+  <div class="card empty-note">
+    {% if a.summary.findings_total %}
+      <p class="muted">No findings at this severity — clear the filter to see the others.</p>
+    {% else %}
+      <h3>No vulnerability issues detected</h3>
+      <p class="muted">
+        No attack signatures or statistical anomalies matched this log. That is
+        good news, but heuristics can miss things: keep logs rotated, and compare
+        against a longer time range if you are suspicious.
+      </p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>
+
+<div class="actions">
+  <a class="btn" href="{{ url_for('export_report', analysis_id=a.id) }}">Download JSON report</a>
+  <a class="btn" href="{{ url_for('index') }}">← Back to all analyses</a>
+  <form method="post" class="inline"
+        action="{{ url_for('delete_report', analysis_id=a.id) }}"
+        onsubmit="return confirm('Delete this analysis?');">
+    <button class="btn danger">Delete</button>
+  </form>
+</div>
+{% endblock %}

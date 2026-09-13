@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card upload-card">
+  <h2>Upload a security log</h2>
+  <p class="muted">
+    Apache/Nginx access logs, syslog / auth logs, CSV, JSON / JSONL, or plain text
+    — the format is detected automatically. Max 50&nbsp;MB.
+  </p>
+  <form action="{{ url_for('upload') }}" method="post"
+        enctype="multipart/form-data" class="upload-form">
+    <div class="dropzone" id="dropzone">
+      <input type="file" name="logfile" id="logfile"
+             accept=".csv,.json,.jsonl,.ndjson,.log,.txt,.text,.out" required>
+      <p class="dz-big">Drop a log file here</p>
+      <p class="muted dz-label">or click to browse</p>
+    </div>
+    <button type="submit" class="btn primary">Analyze log</button>
+  </form>
+</section>
+
+{% if overview %}
+<section class="card overview-card">
+  <div class="overview-head">
+    <h2>Summary of results</h2>
+    <span class="badge band-{{ overview.worst_band }}">worst: {{ overview.worst_band }}</span>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-value">{{ overview.analyses }}</div>
+      <div class="kpi-label">analyses</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">{{ '{:,}'.format(overview.records) }}</div>
+      <div class="kpi-label">log records analyzed</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">{{ '{:,}'.format(overview.findings) }}</div>
+      <div class="kpi-label">findings</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value sev-critical">{{ overview.critical }}</div>
+      <div class="kpi-label">critical findings</div>
+    </div>
+  </div>
+  <div class="charts-row">
+    <div class="chart-block">
+      <h3>Findings by severity</h3>
+      <div class="vbar-chart">
+        {% for s in ['critical', 'high', 'medium', 'low'] %}
+        <div class="vbar-col">
+          <div class="vbar-value">{{ overview.severity_totals[s] }}</div>
+          <div class="vbar-track">
+            <div class="vbar sev-{{ s }}" style="height: {{ overview.severity_pct[s] }}%"></div>
+          </div>
+          <div class="vbar-label sev-{{ s }}">{{ s }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="chart-block">
+      <h3>Findings per analysis</h3>
+      {% for b in overview.bars %}
+      <div class="hbar-row">
+        <a class="hbar-name" href="{{ url_for('report', analysis_id=b.id) }}" title="{{ b.name }}">{{ b.name }}</a>
+        <div class="hbar-track">
+          <div class="hbar" style="width: {{ b.width }}%">
+            {% for seg in b.segments %}
+            <span class="hbar-seg sev-{{ seg.severity }}" style="width: {{ seg.pct }}%"></span>
+            {% endfor %}
+          </div>
+        </div>
+        <span class="hbar-count">{{ b.total }}</span>
+      </div>
+      {% endfor %}
+      <p class="muted hbar-note">
+        Top {{ overview.bars | length }} analyses by finding count, stacked by severity.
+      </p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="card">
+  <h2>Recent analyses</h2>
+  {% if analyses %}
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Risk</th><th>File</th><th>Format</th><th>Records</th>
+          <th class="sev-critical">Crit</th><th class="sev-high">High</th>
+          <th class="sev-medium">Med</th><th class="sev-low">Low</th>
+          <th>Uploaded</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in analyses %}
+        <tr>
+          <td>
+            <a class="badge band-{{ a.risk_band }}" href="{{ url_for('report', analysis_id=a.id) }}">
+              {{ a.risk_band }} · {{ a.risk_score }}
+            </a>
+          </td>
+          <td class="name-cell">
+            <a href="{{ url_for('report', analysis_id=a.id) }}">{{ a.name }}</a>
+          </td>
+          <td><span class="chip">{{ a.format }}</span></td>
+          <td>{{ '{:,}'.format(a.total_records) }}</td>
+          <td class="sev-critical">{{ a.counts.critical or 0 }}</td>
+          <td class="sev-high">{{ a.counts.high or 0 }}</td>
+          <td class="sev-medium">{{ a.counts.medium or 0 }}</td>
+          <td class="sev-low">{{ a.counts.low or 0 }}</td>
+          <td class="muted">{{ a.uploaded_at[:19].replace('T', ' ') }}</td>
+          <td>
+            <form method="post" class="inline"
+                  action="{{ url_for('delete_report', analysis_id=a.id) }}"
+                  onsubmit="return confirm('Delete this analysis?');">
+              <button class="btn danger small">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="muted empty-note">
+    No analyses yet — upload a log file above to get started.
+    You can try the app with the ready-made files in the
+    <code>samples/</code> folder.
+  </p>
+  {% endif %}
+</section>
+{% endblock %}

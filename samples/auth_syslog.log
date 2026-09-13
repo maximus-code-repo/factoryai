@@ -1,0 +1,167 @@
+Sep  8 00:07:00 web01 CROND[2200]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 00:10:00 web01 sshd[3100]: Accepted password for deploy from 10.0.0.15 port 49000 ssh2
+Sep  8 00:11:00 web01 systemd-logind[911]: New session 300 of user deploy.
+Sep  8 02:07:00 web01 CROND[2201]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 02:10:00 web01 sshd[3101]: Accepted password for deploy from 10.0.0.15 port 49001 ssh2
+Sep  8 02:11:00 web01 systemd-logind[911]: New session 301 of user deploy.
+Sep  8 04:07:00 web01 CROND[2202]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 04:10:00 web01 sshd[3102]: Accepted password for deploy from 10.0.0.15 port 49002 ssh2
+Sep  8 04:11:00 web01 systemd-logind[911]: New session 302 of user deploy.
+Sep  8 06:07:00 web01 CROND[2203]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 06:10:00 web01 sshd[3103]: Accepted password for deploy from 10.0.0.15 port 49003 ssh2
+Sep  8 06:11:00 web01 systemd-logind[911]: New session 303 of user deploy.
+Sep  8 08:07:00 web01 CROND[2204]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 08:10:00 web01 sshd[3104]: Accepted password for deploy from 10.0.0.15 port 49004 ssh2
+Sep  8 08:11:00 web01 systemd-logind[911]: New session 304 of user deploy.
+Sep  8 10:07:00 web01 CROND[2205]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 10:10:00 web01 sshd[3105]: Accepted password for deploy from 10.0.0.15 port 49005 ssh2
+Sep  8 10:11:00 web01 systemd-logind[911]: New session 305 of user deploy.
+Sep  8 12:07:00 web01 CROND[2206]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 12:10:00 web01 sshd[3106]: Accepted password for deploy from 10.0.0.15 port 49006 ssh2
+Sep  8 12:11:00 web01 systemd-logind[911]: New session 306 of user deploy.
+Sep  8 14:07:00 web01 CROND[2207]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 14:10:00 web01 sshd[3107]: Accepted password for deploy from 10.0.0.15 port 49007 ssh2
+Sep  8 14:11:00 web01 systemd-logind[911]: New session 307 of user deploy.
+Sep  8 16:07:00 web01 CROND[2208]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 16:10:00 web01 sshd[3108]: Accepted password for deploy from 10.0.0.15 port 49008 ssh2
+Sep  8 16:11:00 web01 systemd-logind[911]: New session 308 of user deploy.
+Sep  8 18:07:00 web01 CROND[2209]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 18:10:00 web01 sshd[3109]: Accepted password for deploy from 10.0.0.15 port 49009 ssh2
+Sep  8 18:11:00 web01 systemd-logind[911]: New session 309 of user deploy.
+Sep  8 20:07:00 web01 CROND[2210]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 20:10:00 web01 sshd[3110]: Accepted password for deploy from 10.0.0.15 port 49010 ssh2
+Sep  8 20:11:00 web01 systemd-logind[911]: New session 310 of user deploy.
+Sep  8 22:07:00 web01 CROND[2211]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  8 22:10:00 web01 sshd[3111]: Accepted password for deploy from 10.0.0.15 port 49011 ssh2
+Sep  8 22:11:00 web01 systemd-logind[911]: New session 311 of user deploy.
+Sep  9 00:07:00 web01 CROND[2212]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 00:10:00 web01 sshd[3112]: Accepted password for deploy from 10.0.0.15 port 49012 ssh2
+Sep  9 00:11:00 web01 systemd-logind[911]: New session 312 of user deploy.
+Sep  9 02:07:00 web01 CROND[2213]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 02:10:00 web01 sshd[3113]: Accepted password for deploy from 10.0.0.15 port 49013 ssh2
+Sep  9 02:11:00 web01 systemd-logind[911]: New session 313 of user deploy.
+Sep  9 02:13:00 web01 sshd[4400]: Failed password for admin from 203.0.113.66 port 52000 ssh2
+Sep  9 02:13:06 web01 sshd[4401]: Failed password for root from 203.0.113.66 port 52001 ssh2
+Sep  9 02:13:12 web01 sshd[4402]: Failed password for admin from 203.0.113.66 port 52002 ssh2
+Sep  9 02:13:18 web01 sshd[4403]: Failed password for root from 203.0.113.66 port 52003 ssh2
+Sep  9 02:13:24 web01 sshd[4404]: Failed password for admin from 203.0.113.66 port 52004 ssh2
+Sep  9 02:13:30 web01 sshd[4405]: Failed password for root from 203.0.113.66 port 52005 ssh2
+Sep  9 02:13:36 web01 sshd[4406]: Failed password for admin from 203.0.113.66 port 52006 ssh2
+Sep  9 02:13:42 web01 sshd[4407]: Failed password for root from 203.0.113.66 port 52007 ssh2
+Sep  9 02:13:48 web01 sshd[4408]: Failed password for admin from 203.0.113.66 port 52008 ssh2
+Sep  9 02:13:54 web01 sshd[4409]: Failed password for root from 203.0.113.66 port 52009 ssh2
+Sep  9 02:14:00 web01 sshd[4410]: Failed password for admin from 203.0.113.66 port 52010 ssh2
+Sep  9 02:14:06 web01 sshd[4411]: Failed password for root from 203.0.113.66 port 52011 ssh2
+Sep  9 02:14:12 web01 sshd[4412]: Failed password for admin from 203.0.113.66 port 52012 ssh2
+Sep  9 02:14:18 web01 sshd[4413]: Failed password for root from 203.0.113.66 port 52013 ssh2
+Sep  9 02:14:24 web01 sshd[4414]: Failed password for admin from 203.0.113.66 port 52014 ssh2
+Sep  9 02:14:30 web01 sshd[4415]: Failed password for root from 203.0.113.66 port 52015 ssh2
+Sep  9 02:14:36 web01 sshd[4416]: Failed password for admin from 203.0.113.66 port 52016 ssh2
+Sep  9 02:14:42 web01 sshd[4417]: Failed password for root from 203.0.113.66 port 52017 ssh2
+Sep  9 02:14:48 web01 sshd[4418]: Failed password for admin from 203.0.113.66 port 52018 ssh2
+Sep  9 02:14:54 web01 sshd[4419]: Failed password for root from 203.0.113.66 port 52019 ssh2
+Sep  9 02:15:00 web01 sshd[4420]: Failed password for admin from 203.0.113.66 port 52020 ssh2
+Sep  9 02:15:06 web01 sshd[4421]: Failed password for root from 203.0.113.66 port 52021 ssh2
+Sep  9 02:15:12 web01 sshd[4422]: Failed password for admin from 203.0.113.66 port 52022 ssh2
+Sep  9 02:15:18 web01 sshd[4423]: Failed password for root from 203.0.113.66 port 52023 ssh2
+Sep  9 02:15:24 web01 sshd[4424]: Failed password for admin from 203.0.113.66 port 52024 ssh2
+Sep  9 02:15:30 web01 sshd[4425]: Failed password for root from 203.0.113.66 port 52025 ssh2
+Sep  9 02:15:36 web01 sshd[4426]: Failed password for admin from 203.0.113.66 port 52026 ssh2
+Sep  9 02:15:42 web01 sshd[4427]: Failed password for root from 203.0.113.66 port 52027 ssh2
+Sep  9 02:15:48 web01 sshd[4428]: Failed password for admin from 203.0.113.66 port 52028 ssh2
+Sep  9 02:15:54 web01 sshd[4429]: Failed password for root from 203.0.113.66 port 52029 ssh2
+Sep  9 02:16:00 web01 sshd[4430]: Failed password for admin from 203.0.113.66 port 52030 ssh2
+Sep  9 02:16:06 web01 sshd[4431]: Failed password for root from 203.0.113.66 port 52031 ssh2
+Sep  9 02:16:12 web01 sshd[4432]: Failed password for admin from 203.0.113.66 port 52032 ssh2
+Sep  9 02:16:18 web01 sshd[4433]: Failed password for root from 203.0.113.66 port 52033 ssh2
+Sep  9 02:16:24 web01 sshd[4434]: Failed password for admin from 203.0.113.66 port 52034 ssh2
+Sep  9 02:16:30 web01 sshd[4435]: Failed password for root from 203.0.113.66 port 52035 ssh2
+Sep  9 02:16:36 web01 sshd[4436]: Failed password for admin from 203.0.113.66 port 52036 ssh2
+Sep  9 02:16:42 web01 sshd[4437]: Failed password for root from 203.0.113.66 port 52037 ssh2
+Sep  9 02:16:48 web01 sshd[4438]: Failed password for admin from 203.0.113.66 port 52038 ssh2
+Sep  9 02:16:54 web01 sshd[4439]: Failed password for root from 203.0.113.66 port 52039 ssh2
+Sep  9 02:17:00 web01 sshd[4440]: Failed password for admin from 203.0.113.66 port 52040 ssh2
+Sep  9 02:17:06 web01 sshd[4441]: Failed password for root from 203.0.113.66 port 52041 ssh2
+Sep  9 02:17:20 web01 sshd[4490]: Accepted password for admin from 203.0.113.66 port 52191 ssh2
+Sep  9 03:40:00 web01 sshd[4500]: Invalid user oracle from 198.51.100.23 port 56000 ssh2
+Sep  9 03:41:00 web01 sshd[4501]: Invalid user postgres from 198.51.100.23 port 56007 ssh2
+Sep  9 03:42:00 web01 sshd[4502]: Invalid user test from 198.51.100.23 port 56014 ssh2
+Sep  9 03:43:00 web01 sshd[4503]: Invalid user guest from 198.51.100.23 port 56021 ssh2
+Sep  9 03:44:00 web01 sshd[4504]: Invalid user pi from 198.51.100.23 port 56028 ssh2
+Sep  9 03:45:00 web01 sshd[4505]: Invalid user ubuntu from 198.51.100.23 port 56035 ssh2
+Sep  9 03:46:00 web01 sshd[4506]: Invalid user service from 198.51.100.23 port 56042 ssh2
+Sep  9 03:47:00 web01 sshd[4507]: Invalid user admin from 198.51.100.23 port 56049 ssh2
+Sep  9 03:48:00 web01 sshd[4508]: Invalid user operator from 198.51.100.23 port 56056 ssh2
+Sep  9 04:02:11 web01 sshd[4601]: reverse mapping checking getaddrinfo for 45.79.180.7 failed - POSSIBLE BREAK-IN ATTEMPT!
+Sep  9 04:02:11 web01 sshd[4601]: Failed publickey for root from 45.79.180.7 port 41022 ssh2
+Sep  9 04:07:00 web01 CROND[2214]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 04:10:00 web01 sshd[3114]: Accepted password for deploy from 10.0.0.15 port 49014 ssh2
+Sep  9 04:11:00 web01 systemd-logind[911]: New session 314 of user deploy.
+Sep  9 06:07:00 web01 CROND[2215]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 06:10:00 web01 sshd[3115]: Accepted password for deploy from 10.0.0.15 port 49015 ssh2
+Sep  9 06:11:00 web01 systemd-logind[911]: New session 315 of user deploy.
+Sep  9 08:07:00 web01 CROND[2216]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 08:10:00 web01 sshd[3116]: Accepted password for deploy from 10.0.0.15 port 49016 ssh2
+Sep  9 08:11:00 web01 systemd-logind[911]: New session 316 of user deploy.
+Sep  9 09:15:02 web01 sudo[4700]: www-data : user NOT in sudoers ; TTY=pts/0 ; PWD=/var/www ; USER=root ; COMMAND=/bin/bash
+Sep  9 09:16:40 web01 sudo[4701]: pam_unix(sudo:auth): authentication failure; logname= uid=33 euid=33 tty=pts/0 ruser=www-data rhost=  user=www-data
+Sep  9 09:18:00 web01 useradd[4750]: new user: name=backdoor, UID=1002, GID=1002, home=/home/backdoor, shell=/bin/bash, from /dev/pts/0
+Sep  9 09:18:30 web01 sudo[4760]: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep  9 10:00:00 web01 sudo[4760]: pam_unix(sudo:session): session closed for user root
+Sep  9 10:07:00 web01 CROND[2217]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 10:10:00 web01 sshd[3117]: Accepted password for deploy from 10.0.0.15 port 49017 ssh2
+Sep  9 10:11:00 web01 systemd-logind[911]: New session 317 of user deploy.
+Sep  9 12:07:00 web01 CROND[2218]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 12:10:00 web01 sshd[3118]: Accepted password for deploy from 10.0.0.15 port 49018 ssh2
+Sep  9 12:11:00 web01 systemd-logind[911]: New session 318 of user deploy.
+Sep  9 14:07:00 web01 CROND[2219]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 14:10:00 web01 sshd[3119]: Accepted password for deploy from 10.0.0.15 port 49019 ssh2
+Sep  9 14:11:00 web01 systemd-logind[911]: New session 319 of user deploy.
+Sep  9 16:07:00 web01 CROND[2220]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 16:10:00 web01 sshd[3120]: Accepted password for deploy from 10.0.0.15 port 49020 ssh2
+Sep  9 16:11:00 web01 systemd-logind[911]: New session 320 of user deploy.
+Sep  9 18:07:00 web01 CROND[2221]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 18:10:00 web01 sshd[3121]: Accepted password for deploy from 10.0.0.15 port 49021 ssh2
+Sep  9 18:11:00 web01 systemd-logind[911]: New session 321 of user deploy.
+Sep  9 20:07:00 web01 CROND[2222]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 20:10:00 web01 sshd[3122]: Accepted password for deploy from 10.0.0.15 port 49022 ssh2
+Sep  9 20:11:00 web01 systemd-logind[911]: New session 322 of user deploy.
+Sep  9 22:07:00 web01 CROND[2223]: (root) CMD (/usr/local/bin/backup.sh)
+Sep  9 22:10:00 web01 sshd[3123]: Accepted password for deploy from 10.0.0.15 port 49023 ssh2
+Sep  9 22:11:00 web01 systemd-logind[911]: New session 323 of user deploy.
+Sep 10 00:07:00 web01 CROND[2224]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 00:10:00 web01 sshd[3124]: Accepted password for deploy from 10.0.0.15 port 49024 ssh2
+Sep 10 00:11:00 web01 systemd-logind[911]: New session 324 of user deploy.
+Sep 10 02:07:00 web01 CROND[2225]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 02:10:00 web01 sshd[3125]: Accepted password for deploy from 10.0.0.15 port 49025 ssh2
+Sep 10 02:11:00 web01 systemd-logind[911]: New session 325 of user deploy.
+Sep 10 04:07:00 web01 CROND[2226]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 04:10:00 web01 sshd[3126]: Accepted password for deploy from 10.0.0.15 port 49026 ssh2
+Sep 10 04:11:00 web01 systemd-logind[911]: New session 326 of user deploy.
+Sep 10 06:07:00 web01 CROND[2227]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 06:10:00 web01 sshd[3127]: Accepted password for deploy from 10.0.0.15 port 49027 ssh2
+Sep 10 06:11:00 web01 systemd-logind[911]: New session 327 of user deploy.
+Sep 10 08:07:00 web01 CROND[2228]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 08:10:00 web01 sshd[3128]: Accepted password for deploy from 10.0.0.15 port 49028 ssh2
+Sep 10 08:11:00 web01 systemd-logind[911]: New session 328 of user deploy.
+Sep 10 10:07:00 web01 CROND[2229]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 10:10:00 web01 sshd[3129]: Accepted password for deploy from 10.0.0.15 port 49029 ssh2
+Sep 10 10:11:00 web01 systemd-logind[911]: New session 329 of user deploy.
+Sep 10 12:07:00 web01 CROND[2230]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 12:10:00 web01 sshd[3130]: Accepted password for deploy from 10.0.0.15 port 49030 ssh2
+Sep 10 12:11:00 web01 systemd-logind[911]: New session 330 of user deploy.
+Sep 10 14:07:00 web01 CROND[2231]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 14:10:00 web01 sshd[3131]: Accepted password for deploy from 10.0.0.15 port 49031 ssh2
+Sep 10 14:11:00 web01 systemd-logind[911]: New session 331 of user deploy.
+Sep 10 16:07:00 web01 CROND[2232]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 16:10:00 web01 sshd[3132]: Accepted password for deploy from 10.0.0.15 port 49032 ssh2
+Sep 10 16:11:00 web01 systemd-logind[911]: New session 332 of user deploy.
+Sep 10 18:07:00 web01 CROND[2233]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 18:10:00 web01 sshd[3133]: Accepted password for deploy from 10.0.0.15 port 49033 ssh2
+Sep 10 18:11:00 web01 systemd-logind[911]: New session 333 of user deploy.
+Sep 10 20:07:00 web01 CROND[2234]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 20:10:00 web01 sshd[3134]: Accepted password for deploy from 10.0.0.15 port 49034 ssh2
+Sep 10 20:11:00 web01 systemd-logind[911]: New session 334 of user deploy.
+Sep 10 22:07:00 web01 CROND[2235]: (root) CMD (/usr/local/bin/backup.sh)
+Sep 10 22:10:00 web01 sshd[3135]: Accepted password for deploy from 10.0.0.15 port 49035 ssh2
+Sep 10 22:11:00 web01 systemd-logind[911]: New session 335 of user deploy.
