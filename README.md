@@ -27,9 +27,11 @@ the evidence and source logs before taking action.
 - Up to 10 source-log evidence lines per finding
 - Remediation steps and authoritative reference links
 - JSON report downloads
+- A right-side chatbot powered by Amazon Nova 2 Lite
+- Private, per-user saved chat sessions in the Amplify deployment
 - Sample attack logs and a clean negative-control log
 - A pytest suite covering parsers, rules, anomalies, Flask routes, sample logs,
-  and the Amplify Lambda handler
+  and the Amplify Lambda and Bedrock handlers
 
 ## Supported input
 
@@ -163,6 +165,10 @@ The cloud application uses AWS Amplify Gen 2:
 - **Amazon Cognito** provides email/password signup, confirmation, and sign-in.
 - **Amazon S3** stores uploads and reports under each Cognito identity ID.
 - **AWS Lambda** runs the existing Python analysis engine after an S3 upload.
+- **AWS AppSync and DynamoDB** provide authenticated chat operations and
+  private, owner-authorized chat-session storage.
+- **Amazon Bedrock** answers chat questions with the US cross-region Nova 2
+  Lite inference profile, `us.amazon.nova-2-lite-v1:0`.
 
 ### Cloud processing flow
 
@@ -180,6 +186,27 @@ details, severity filters, evidence, remediation, references, JSON export, and
 deletion. Deleting a completed analysis removes both its source upload and JSON
 report.
 
+### Chat processing flow
+
+1. An authenticated user opens or creates a saved chat on the right side.
+2. The frontend sends the question, the most recent 12 chat messages, and
+   summaries of the user's loaded reports to an authenticated AppSync mutation.
+3. AppSync invokes a Python 3.13 Lambda.
+4. The Lambda validates and limits the input, then calls Bedrock's Converse API
+   with `us.amazon.nova-2-lite-v1:0`.
+5. The frontend displays the answer and saves the completed exchange through
+   owner-authorized Amplify Data models.
+
+The chatbot accepts general questions. Report context contains aggregate
+metadata, risk scores, severity counts, finding totals, and most-flagged IPs.
+It does not send raw evidence lines or original log files to the model. Report
+context is capped before invocation, and log-derived text is explicitly treated
+as untrusted data in the system prompt.
+
+Saved sessions and exchanges are private to their Cognito owner. Exchanges use
+separate records so concurrent browser tabs cannot overwrite a full transcript.
+The model receives at most 12 previous messages for each answer.
+
 ### Cloud resource settings
 
 - Uploads use Amplify Storage and S3 multipart upload support.
@@ -190,6 +217,12 @@ report.
 - Users can read, write, and delete only within their own upload path.
 - Users can read and delete only reports within their own analysis path.
 - The Lambda can read/delete uploads and write reports across managed paths.
+- The chat Lambda can invoke only the configured Nova 2 Lite inference profile
+  and its underlying Nova 2 Lite foundation model.
+- Chat mutations require Cognito authentication, and chat-session records use
+  owner authorization.
+- Chat usage is limited to 100 Bedrock requests per authenticated user per UTC
+  day, with 10 reserved concurrent Lambda executions.
 - Incomplete multipart uploads are aborted after one day.
 - `keepOnDelete: true` retains the production S3 bucket when the Amplify
   backend is deleted. Retained data continues to incur S3 charges.
@@ -201,6 +234,9 @@ Requirements:
 - An AWS account
 - A GitHub repository containing this code
 - An Amplify service role allowed to deploy the Gen 2 backend
+- A CDK-bootstrap stack version 6 or newer in the target account and region
+- Amazon Bedrock access to Nova 2 Lite through the US cross-region inference
+  profile
 
 Deployment steps:
 
@@ -212,6 +248,22 @@ Deployment steps:
 6. Save and deploy.
 7. Open the generated URL, create an account, confirm the emailed code, and
    sign in.
+
+For account `YOUR_ACCOUNT_ID` and deployment region `YOUR_REGION`, bootstrap
+CDK once before the first deployment:
+
+```bash
+npx aws-cdk@latest bootstrap aws://YOUR_ACCOUNT_ID/YOUR_REGION
+```
+
+The Amplify deployment role must be able to read
+`/cdk-bootstrap/hnb659fds/version` from Systems Manager Parameter Store. The
+AWS-managed `AmplifyBackendDeployFullAccess` policy supplies the standard Gen 2
+deployment permissions.
+
+Nova 2 Lite uses US cross-region inference. Your organization policies must
+allow Bedrock invocation in the destination regions used by the
+`us.amazon.nova-2-lite-v1:0` inference profile.
 
 The build uses Node.js 22. Its backend phase installs dependencies and runs:
 
@@ -301,7 +353,8 @@ npm run build
 
 The Lambda tests use an in-memory S3 fake and do not require AWS credentials.
 A real Amplify sandbox or branch deployment is still required to validate IAM,
-Cognito, S3 notifications, and Lambda execution in AWS.
+Cognito, AppSync, DynamoDB, Bedrock, S3 notifications, and Lambda execution in
+AWS.
 
 ## Project layout
 
@@ -319,12 +372,17 @@ logsentinel/
 amplify/
   auth/resource.ts                   Cognito email authentication
   storage/resource.ts                Per-user S3 authorization
+  data/resource.ts                   Private chat sessions and chat mutation
   functions/analyze_logs/
     handler.py                       S3-triggered Python analysis handler
     resource.ts                      Lambda runtime, memory, timeout, and bundle
+  functions/chat_agent/
+    handler.py                       Nova 2 Lite Converse API handler
+    resource.ts                      Chat Lambda and Bedrock IAM permission
   backend.ts                         Amplify resources, S3 trigger, lifecycle
 src/
   App.tsx                            Cloud dashboard and upload workflow
+  ChatPanel.tsx                      Saved right-side chatbot interface
   ReportView.tsx                     Cloud report UI
   storage.ts                         Amplify Storage operations and caching
   types.ts                           Analysis/report TypeScript types
@@ -358,8 +416,15 @@ findings automatically.
 - The local Flask mode keeps logs on the local filesystem.
 - The Amplify mode sends logs to S3 in your AWS account and emits failures to
   CloudWatch Logs.
+- The chatbot sends questions, recent chat history, and aggregate report
+  summaries to Amazon Bedrock. It does not send original logs or evidence
+  lines.
+- Saved chat sessions are stored in DynamoDB and count toward AWS usage costs.
+- Bedrock responses can be incomplete or incorrect. Do not treat chatbot output
+  as proof of compromise or as a substitute for professional security review.
 - Review Cognito self-signup, IAM, S3 retention, CloudWatch retention, AWS
-  region, compliance, and cost controls before accepting production logs.
+  region, Bedrock cross-region inference, compliance, and cost controls before
+  accepting production logs.
 - The Amplify browser check is not an S3 service quota. The Lambda removes
   uploads that exceed the application's 100 MB analysis limit after S3 creates
   the object.

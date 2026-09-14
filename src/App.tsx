@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import ChatPanel from "./ChatPanel";
 import { ReportView } from "./ReportView";
 import {
   ALLOWED_EXTENSIONS,
@@ -185,18 +186,19 @@ export default function App({ username, signOut }: AppProps) {
         </div>
       </header>
 
-      <main className="container">
-        {error && <div className="flash error">{error}</div>}
-        {message && <div className="flash">{message}</div>}
+      <div className="app-workspace">
+        <main className="container">
+          {error && <div className="flash error">{error}</div>}
+          {message && <div className="flash">{message}</div>}
 
-        {selected ? (
-          <ReportView
-            analysis={selected}
-            onBack={() => setSelected(null)}
-            onDelete={removeAnalysis}
-          />
-        ) : (
-          <>
+          {selected ? (
+            <ReportView
+              analysis={selected}
+              onBack={() => setSelected(null)}
+              onDelete={removeAnalysis}
+            />
+          ) : (
+            <>
             <section className="card upload-card">
               <h2>Upload a security log</h2>
               <p className="muted">
@@ -358,9 +360,11 @@ export default function App({ username, signOut }: AppProps) {
                 </table>
               </div>
             </section>
-          </>
-        )}
-      </main>
+            </>
+          )}
+        </main>
+        <ChatPanel analyses={analyses} />
+      </div>
 
       <footer className="footer">
         Files and reports are private to your signed-in account. Findings are
