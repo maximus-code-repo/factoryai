@@ -222,7 +222,7 @@ The model receives at most 12 previous messages for each answer.
 - Chat mutations require Cognito authentication, and chat-session records use
   owner authorization.
 - Chat usage is limited to 100 Bedrock requests per authenticated user per UTC
-  day, with 10 reserved concurrent Lambda executions.
+  day.
 - Incomplete multipart uploads are aborted after one day.
 - `keepOnDelete: true` retains the production S3 bucket when the Amplify
   backend is deleted. Retained data continues to incur S3 charges.

@@ -40,7 +40,6 @@ export const chatAgent = defineFunction(
       }),
       timeout: Duration.seconds(28),
       memorySize: 512,
-      reservedConcurrentExecutions: 10,
       description: "Answer authenticated LogSentinel chat questions with Nova 2 Lite",
       environment: {
         BEDROCK_MODEL_ID: modelId,
