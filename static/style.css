@@ -1,18 +1,18 @@
-/* LogSentinel - dark security-console theme, no external dependencies */
+/* LogSentinel - light security-console theme, no external dependencies */
 
 :root {
-  --bg: #0d1220;
-  --panel: #151c2e;
-  --panel-2: #1b2438;
-  --border: #2a3550;
-  --text: #e7ecf5;
-  --muted: #8f9cb3;
-  --accent: #5ca9ff;
-  --sev-critical: #ff5c5c;
-  --sev-high: #ff9838;
-  --sev-medium: #ffd23f;
-  --sev-low: #5ca9ff;
-  --ok: #4ade80;
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --panel-2: #eef2f7;
+  --border: #d7dee9;
+  --text: #172033;
+  --muted: #5f6b7d;
+  --accent: #2563eb;
+  --sev-critical: #dc2626;
+  --sev-high: #ea580c;
+  --sev-medium: #b77900;
+  --sev-low: #2563eb;
+  --ok: #15803d;
 }
 
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
 /* ---- layout ---- */
 .topbar {
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, #131a2c, #0f1524);
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -82,19 +82,19 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
 .card h3 { margin: 0 0 10px; font-size: 15.5px; color: var(--text); }
 
 .flash {
-  background: #12233c;
-  border: 1px solid #234a77;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-left: 4px solid var(--accent);
-  color: #cfe3ff;
+  color: #1e40af;
   padding: 11px 16px;
   border-radius: 8px;
   margin-bottom: 18px;
 }
 .flash.warn {
-  background: #2b2413;
-  border-color: #6b5a1e;
+  background: #fffbeb;
+  border-color: #fde68a;
   border-left-color: var(--sev-medium);
-  color: #f3e3a8;
+  color: #854d0e;
 }
 
 .muted { color: var(--muted); }
@@ -115,7 +115,7 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
 }
-.dropzone:hover, .dropzone.dragging { border-color: var(--accent); background: #1d2946; }
+.dropzone:hover, .dropzone.dragging { border-color: var(--accent); background: #eaf2ff; }
 .dropzone input[type="file"] {
   position: absolute;
   inset: 0;
@@ -140,9 +140,9 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
   font-family: inherit;
 }
 .btn:hover { border-color: var(--accent); text-decoration: none; }
-.btn.primary { background: #1f5fb8; border-color: #2a6fcb; font-weight: 600; }
-.btn.primary:hover { background: #2470d0; }
-.btn.danger { color: #ffb4b4; border-color: #66343a; background: #2b1a1e; }
+.btn.primary { background: #2563eb; border-color: #1d4ed8; color: #ffffff; font-weight: 600; }
+.btn.primary:hover { background: #1d4ed8; }
+.btn.danger { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }
 .btn.danger:hover { border-color: var(--sev-critical); }
 .btn.small { padding: 4px 12px; font-size: 13px; }
 .inline { display: inline; }
@@ -160,7 +160,7 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
 }
 .table th { color: var(--muted); font-weight: 600; font-size: 12.5px; text-transform: uppercase; }
 .table tr:last-child td { border-bottom: none; }
-.table tr:hover td { background: rgba(92, 169, 255, 0.04); }
+.table tr:hover td { background: #f8fbff; }
 .name-cell { max-width: 320px; overflow: hidden; text-overflow: ellipsis; }
 
 .empty-note { padding: 26px 10px; }
@@ -183,16 +183,16 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
 .sev-medium { color: var(--sev-medium); }
 .sev-low { color: var(--sev-low); }
 
-.badge.sev-critical { border-color: var(--sev-critical); background: rgba(255, 92, 92, 0.1); }
-.badge.sev-high { border-color: var(--sev-high); background: rgba(255, 152, 56, 0.1); }
-.badge.sev-medium { border-color: var(--sev-medium); background: rgba(255, 210, 63, 0.08); }
-.badge.sev-low { border-color: var(--sev-low); background: rgba(92, 169, 255, 0.1); }
+.badge.sev-critical { border-color: #fca5a5; background: #fef2f2; }
+.badge.sev-high { border-color: #fdba74; background: #fff7ed; }
+.badge.sev-medium { border-color: #fcd34d; background: #fffbeb; }
+.badge.sev-low { border-color: #93c5fd; background: #eff6ff; }
 
-.band-low { color: var(--ok); border-color: var(--ok); background: rgba(74, 222, 128, 0.1); }
-.band-moderate { color: var(--sev-low); border-color: var(--sev-low); background: rgba(92, 169, 255, 0.1); }
-.band-elevated { color: var(--sev-medium); border-color: var(--sev-medium); background: rgba(255, 210, 63, 0.08); }
-.band-high { color: var(--sev-high); border-color: var(--sev-high); background: rgba(255, 152, 56, 0.1); }
-.band-critical { color: var(--sev-critical); border-color: var(--sev-critical); background: rgba(255, 92, 92, 0.1); }
+.band-low { color: var(--ok); border-color: #86efac; background: #f0fdf4; }
+.band-moderate { color: var(--sev-low); border-color: #93c5fd; background: #eff6ff; }
+.band-elevated { color: var(--sev-medium); border-color: #fcd34d; background: #fffbeb; }
+.band-high { color: var(--sev-high); border-color: #fdba74; background: #fff7ed; }
+.band-critical { color: var(--sev-critical); border-color: #fca5a5; background: #fef2f2; }
 
 .chip {
   display: inline-block;
@@ -204,7 +204,7 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
   background: var(--panel-2);
 }
 .chip:hover { text-decoration: none; border-color: var(--accent); color: var(--text); }
-.chip.active { border-color: var(--accent); color: var(--text); background: #1d2c4c; }
+.chip.active { border-color: var(--accent); color: var(--text); background: #dbeafe; }
 .chips-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
 .chip.sev-bg-critical { color: var(--sev-critical); }
 .chip.sev-bg-high { color: var(--sev-high); }
@@ -279,10 +279,10 @@ code, .mono { font-family: Consolas, "Cascadia Mono", monospace; }
 .metric b { color: var(--text); font-weight: 600; }
 
 .callout {
-  background: #10261b;
-  border: 1px solid #1f5236;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
   border-left: 3px solid var(--ok);
-  color: #b9e5c8;
+  color: #166534;
   padding: 10px 14px;
   border-radius: 8px;
   font-size: 14px;
@@ -310,7 +310,7 @@ details.evidence summary {
   user-select: none;
 }
 .evidence-pre {
-  background: #0a0e19;
+  background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 12px 14px;
@@ -321,7 +321,7 @@ details.evidence summary {
   word-break: break-all;
   max-height: 340px;
   overflow-y: auto;
-  color: #c4cee0;
+  color: #475569;
   margin: 10px 0 0;
 }
 

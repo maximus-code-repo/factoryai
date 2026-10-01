@@ -186,8 +186,8 @@ button:disabled {
 
 .chat-message.user {
   align-self: flex-end;
-  background: #1d2c4c;
-  border-color: #2a5c94;
+  background: #dbeafe;
+  border-color: #93c5fd;
 }
 
 .chat-message.assistant {
@@ -196,9 +196,9 @@ button:disabled {
 }
 
 .chat-error {
-  background: #2b1a1e;
-  border-top: 1px solid #66343a;
-  color: #ffb4b4;
+  background: #fef2f2;
+  border-top: 1px solid #fecaca;
+  color: #b91c1c;
   font-size: 12px;
   padding: 8px 14px;
 }
@@ -210,7 +210,7 @@ button:disabled {
 }
 
 .chat-form textarea {
-  background: #0a0e19;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
