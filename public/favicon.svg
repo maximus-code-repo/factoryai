@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">LogSentinel open padlock</title>
-  <rect width="64" height="64" rx="14" fill="#000"/>
-  <path d="M20 31V21C20 14 25 9 32 9s12 5 12 12v-1" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/>
-  <rect x="15" y="30" width="34" height="27" rx="6" fill="#fff"/>
-  <circle cx="32" cy="42" r="3" fill="#2563eb"/>
-  <path d="M32 45v6" stroke="#2563eb" stroke-linecap="round" stroke-width="3"/>
+  <title id="title">LogSentinel closed padlock</title>
+  <rect width="64" height="64" rx="14" fill="#2563eb"/>
+  <path d="M20 30v-8c0-7 5-12 12-12s12 5 12 12v8" fill="none" stroke="#000" stroke-linecap="round" stroke-width="6"/>
+  <rect x="15" y="28" width="34" height="27" rx="6" fill="#000"/>
+  <circle cx="32" cy="40" r="3" fill="#2563eb"/>
+  <path d="M32 43v6" stroke="#2563eb" stroke-linecap="round" stroke-width="3"/>
 </svg>
