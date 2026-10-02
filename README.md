@@ -396,6 +396,12 @@ amplify.yml                          Amplify Hosting build definition
 package.json                         React, Amplify, Vite, and CDK dependencies
 ```
 
+## Development guide
+
+See [AGENTS.md](AGENTS.md) for contributor setup, architecture, common
+commands, coding conventions, validation expectations, and step-by-step
+workflows for changing detectors, Flask routes, and Amplify resources.
+
 ## Add a detector
 
 Signature detectors are functions in `logsentinel/rules.py` that accept a list
