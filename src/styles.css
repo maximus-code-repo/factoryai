@@ -186,8 +186,8 @@ button:disabled {
 
 .chat-message.user {
   align-self: flex-end;
-  background: #dbeafe;
-  border-color: #93c5fd;
+  background: #1d2c4c;
+  border-color: #2a5c94;
 }
 
 .chat-message.assistant {
@@ -196,9 +196,9 @@ button:disabled {
 }
 
 .chat-error {
-  background: #fef2f2;
-  border-top: 1px solid #fecaca;
-  color: #b91c1c;
+  background: #2b1a1e;
+  border-top: 1px solid #66343a;
+  color: #ffb4b4;
   font-size: 12px;
   padding: 8px 14px;
 }
@@ -210,7 +210,7 @@ button:disabled {
 }
 
 .chat-form textarea {
-  background: #ffffff;
+  background: #0a0e19;
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
@@ -284,6 +284,14 @@ button:disabled {
 }
 
 [data-amplify-authenticator] {
+  --amplify-colors-background-primary: var(--bg);
+  --amplify-colors-background-secondary: var(--panel);
+  --amplify-colors-border-primary: var(--border);
+  --amplify-colors-font-primary: var(--text);
+  --amplify-colors-font-secondary: var(--muted);
+  --amplify-colors-brand-primary-80: #2470d0;
+  --amplify-colors-brand-primary-90: #1f5fb8;
+  --amplify-colors-brand-primary-100: #194f9b;
   min-height: 100vh;
 }
 
